@@ -1,8 +1,12 @@
+import Navbar from "./components/Navbar";
+import UserTable from "./components/UserTable";
+
 function App() {
   return (
-    <>
-      <p className="text-red-500">Hello, World!</p>
-    </>
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <UserTable />
+    </div>
   );
 }
 
