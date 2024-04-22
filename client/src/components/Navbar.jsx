@@ -29,7 +29,7 @@ function Navbar() {
   };
 
   const Input = styled(MuiInput)`
-    width: 42px;
+    width: 100%;
     color: white;
     margin-left: 1rem;
   `;
@@ -51,6 +51,9 @@ function Navbar() {
             <Slider
               value={typeof errorValue === "number" ? errorValue : 0}
               onChange={handleSliderChange}
+              min={1}
+              max={10}
+              step={0.25}
               aria-labelledby="input-slider"
             />
             <Grid item>
