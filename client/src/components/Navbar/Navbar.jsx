@@ -4,13 +4,10 @@ import RegionSelect from "./RegionSelect";
 import ErrorSliderInput from "./ErrorsSliderInput";
 import SeedInputWithButton from "./SeedInputWithButton";
 
-function Navbar() {
-  const [region, setRegion] = useState("Country 1");
-  const [errorValue, setErrorValue] = useState(0);
-  const [seed, setSeed] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
+function Navbar(props) {
+  const { region, setRegion, errorValue, setErrorValue, seed, setSeed } = props;
 
-  console.log(region, errorValue, seed);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -24,7 +21,10 @@ function Navbar() {
     setSeed(event.target.value);
   };
 
-  const handleShuffleButtonClick = () => {};
+  const handleShuffleButtonClick = () => {
+    const randomSeed = Math.floor(Math.random() * 1000000);
+    setSeed(randomSeed);
+  };
 
   const handleInputChange = (event) => {
     setErrorValue(event.target.value === "" ? 0 : Number(event.target.value));
