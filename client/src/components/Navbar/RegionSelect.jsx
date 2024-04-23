@@ -7,9 +7,9 @@ const RegionSelect = ({ region, handleRegionChange }) => {
       value={region}
       onChange={handleRegionChange}
     >
-      <option>Country 1</option>
-      <option>Country 2</option>
-      <option>Country 3</option>
+      <option>USA</option>
+      <option>Poland</option>
+      <option>Germany</option>
     </select>
   );
 };

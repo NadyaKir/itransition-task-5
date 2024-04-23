@@ -26,10 +26,6 @@ function Navbar() {
 
   const handleShuffleButtonClick = () => {};
 
-  const handleSliderChange = (_, newValue) => {
-    setErrorValue(newValue);
-  };
-
   const handleInputChange = (event) => {
     setErrorValue(event.target.value === "" ? 0 : Number(event.target.value));
   };

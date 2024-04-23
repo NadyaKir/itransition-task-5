@@ -1,6 +1,6 @@
 import React from "react";
 
-function UserTable() {
+function UserTable({ users }) {
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full divide-y divide-gray-200">
@@ -24,23 +24,25 @@ function UserTable() {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              1
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              1234567
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              John Doe
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              Vashington, 13 ds. street
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              +67(454)4563456
-            </td>
-          </tr>
+          {users.map((user, index) => (
+            <tr key={user.id}>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {index + 1}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {user.id}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {user.fullName}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {user.address}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {user.phone}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
