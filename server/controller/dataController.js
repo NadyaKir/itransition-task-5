@@ -4,6 +4,11 @@ import { faker as fakerDE } from "@faker-js/faker/locale/de";
 
 export const generateData = (req, res) => {
   const { region, seed, errorValue } = req.body;
+  if (errorValue > 1000) {
+    return res
+      .status(400)
+      .json({ error: "Value exceeds maximum limit of 1000" });
+  }
   const tableData = generateTableData(region, seed, errorValue);
 
   res.json({ body: tableData });

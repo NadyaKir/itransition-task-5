@@ -12,8 +12,8 @@ const Input = styled(MuiInput)`
 const handleBlur = (errorValue, setErrorValue) => {
   if (errorValue < 0) {
     setErrorValue(0);
-  } else if (errorValue > 10) {
-    setErrorValue(10);
+  } else if (errorValue > 1000) {
+    setErrorValue(1000);
   }
 };
 
@@ -23,7 +23,7 @@ const ErrorSliderInput = ({ value, onChange, errorValue, setErrorValue }) => {
       <Slider
         value={typeof value === "number" ? value : 0}
         onChange={onChange}
-        min={0}
+        min={1}
         max={10}
         step={0.25}
         aria-labelledby="input-slider"
