@@ -23,7 +23,7 @@ const ErrorSliderInput = ({ value, onChange, errorValue, setErrorValue }) => {
       <Slider
         value={typeof value === "number" ? value : 0}
         onChange={onChange}
-        min={1}
+        min={0}
         max={10}
         step={0.25}
         aria-labelledby="input-slider"
@@ -38,7 +38,6 @@ const ErrorSliderInput = ({ value, onChange, errorValue, setErrorValue }) => {
             step: 1,
             min: 0,
             max: 1000,
-            type: "number",
             "aria-labelledby": "input-slider",
           }}
         />

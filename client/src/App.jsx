@@ -9,13 +9,14 @@ function App() {
   const [seed, setSeed] = useState(20);
   const [data, setData] = useState([]);
 
-  console.log(region, seed);
+  console.log(region, seed, errorValue);
 
   useEffect(() => {
     axios
-      .post("http://localhost:8000/api/generateData?${Date.now()", {
+      .post("http://localhost:8000/api/generateData", {
         region: region,
         seed: seed,
+        errorValue: errorValue,
       })
       .then((response) => {
         setData(response.data.body);
@@ -24,7 +25,7 @@ function App() {
       .catch((error) => {
         console.error("There was a problem with the request:", error);
       });
-  }, [region, seed]);
+  }, [region, seed, errorValue]);
 
   return (
     <div className="flex flex-col min-h-screen">
